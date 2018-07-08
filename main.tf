@@ -29,10 +29,10 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
-#resource "aws_s3_bucket_policy" "force_encrpyt" {
-#  bucket = "${aws_s3_bucket.bucket.id}"
-#  policy = "${data.template_file.force_encrpyt_json.rendered}"
-#}
+resource "aws_s3_bucket_policy" "force_encrpyt" {
+  bucket = "${aws_s3_bucket.bucket.id}"
+  policy = "${data.template_file.force_encrpyt_json.rendered}"
+}
 
 resource "aws_kms_key" "mykey" {
   description             = "This key is used to encrypt bucket objects"
