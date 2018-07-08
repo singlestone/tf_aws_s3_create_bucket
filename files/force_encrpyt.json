@@ -4,6 +4,7 @@
        "Statement": [
              {
                   "Effect": "Allow",
+                  "Principal": "*",
                   "Action": "s3:*",
                   "Resource": "${s3_bucket_arn}/*"
              },
